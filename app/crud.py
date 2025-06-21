@@ -10,7 +10,7 @@ def generate_short_code(length: int = 6):
 
 def create_short_url(db: Session, original_url: str):
     short_code = generate_short_code()
-    db_url = models.URL(short_code=short_code, original_url=original_url)
+    db_url = models.URL(short_code=short_code, original_url=str(original_url))
     db.add(db_url)
     db.commit()
     db.refresh(db_url)
