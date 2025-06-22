@@ -1,2 +1,8 @@
-fastapi[all]
+fastapi
+uvicorn
 sqlalchemy
+pydantic
+aiofiles
+jinja2
+python-multipart
+

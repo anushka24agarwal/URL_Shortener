@@ -18,7 +18,7 @@ function App() {
     }
 
     try {
-      const res = await axios.post("http://127.0.0.1:8000/shorten", { url });
+      const res = await axios.post("/shorten", { url });
       setShortened(`http://127.0.0.1:8000/${res.data.short_code}`);
     } catch (err) {
       setError("Failed to shorten URL. Try again.");
@@ -27,7 +27,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1>🔗 FastAPI URL Shortener</h1>
+      <h1>🔗 URL Shortener</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
