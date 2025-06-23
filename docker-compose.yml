@@ -9,14 +9,33 @@ services:
       - "8000:8000"
     volumes:
       - ./app:/code/app
+    depends_on:
+      - postgres
     environment:
-      - PYTHONUNBUFFERED=1
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/shortener
 
   frontend:
     build:
-      context: .
-      dockerfile: Dockerfile.frontend
+      context: ./frontend
+      dockerfile: Dockerfile.dev  # new file below
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
     ports:
-      - "3000:80"
+      - "3000:3000"
     depends_on:
       - backend
+
+  postgres:
+    image: postgres:15
+    container_name: pg_url_shortener
+    restart: always
+    environment:
+      POSTGRES_DB: shortener
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
