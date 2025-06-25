@@ -1,8 +1,12 @@
 # 🔗 URL Shortener
 
-A full-stack **URL shortening service** built with **FastAPI**, **React**, and **PostgreSQL** — fully containerized using Docker.
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.95%2B-009688?logo=fastapi)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15%2B-4169E1?logo=postgresql)
+![Docker](https://img.shields.io/badge/Docker-20.10%2B-2496ED?logo=docker)
+![React](https://img.shields.io/badge/React-18%2B-61DAFB?logo=react)
 
-> <u>Generate short, shareable links just like Bitly or TinyURL!</u>
+A full-stack **URL shortening service** built with **FastAPI**, **React** and **PostgreSQL**, fully containerized using Docker.
 
 
 ## 🚀 Features
